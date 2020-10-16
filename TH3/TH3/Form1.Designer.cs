@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.frmInfo = new System.Windows.Forms.GroupBox();
+            this.txtHinh = new System.Windows.Forms.PictureBox();
             this.checkedGirl = new System.Windows.Forms.CheckBox();
             this.checkedBoy = new System.Windows.Forms.CheckBox();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -48,7 +50,6 @@
             this.lblbirth = new System.Windows.Forms.Label();
             this.lblNam = new System.Windows.Forms.Label();
             this.lblNV = new System.Windows.Forms.Label();
-            this.someThing = new System.Windows.Forms.ListView();
             this.frmList = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDefault = new System.Windows.Forms.Button();
@@ -65,8 +66,9 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtHinh = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.frmInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHinh)).BeginInit();
             this.frmList.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,13 +94,22 @@
             this.frmInfo.Controls.Add(this.lblbirth);
             this.frmInfo.Controls.Add(this.lblNam);
             this.frmInfo.Controls.Add(this.lblNV);
-            this.frmInfo.Controls.Add(this.someThing);
             this.frmInfo.Location = new System.Drawing.Point(2, 3);
             this.frmInfo.Name = "frmInfo";
             this.frmInfo.Size = new System.Drawing.Size(974, 300);
             this.frmInfo.TabIndex = 0;
             this.frmInfo.TabStop = false;
             this.frmInfo.Text = "Thông Tin";
+            // 
+            // txtHinh
+            // 
+            this.txtHinh.Image = global::TH3.Properties.Resources._120117235_329029118370861_2582664721830408211_n;
+            this.txtHinh.Location = new System.Drawing.Point(41, 44);
+            this.txtHinh.Name = "txtHinh";
+            this.txtHinh.Size = new System.Drawing.Size(249, 226);
+            this.txtHinh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.txtHinh.TabIndex = 25;
+            this.txtHinh.TabStop = false;
             // 
             // checkedGirl
             // 
@@ -130,6 +141,7 @@
             this.btnBrowse.TabIndex = 22;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // selectedItem
             // 
@@ -276,14 +288,6 @@
             this.lblNV.TabIndex = 2;
             this.lblNV.Text = "Mã NV";
             // 
-            // someThing
-            // 
-            this.someThing.Location = new System.Drawing.Point(28, 35);
-            this.someThing.Name = "someThing";
-            this.someThing.Size = new System.Drawing.Size(154, 199);
-            this.someThing.TabIndex = 1;
-            this.someThing.UseCompatibleStateImageBehavior = false;
-            // 
             // frmList
             // 
             this.frmList.Controls.Add(this.btnExit);
@@ -319,6 +323,7 @@
             this.btnDefault.TabIndex = 19;
             this.btnDefault.Text = "Mặc định";
             this.btnDefault.UseVisualStyleBackColor = true;
+            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
             // btnAddjust
             // 
@@ -425,12 +430,11 @@
             this.columnHeader14.Text = "Hình";
             this.columnHeader14.Width = 110;
             // 
-            // txtHinh
+            // imageList1
             // 
-            this.txtHinh.Location = new System.Drawing.Point(390, 247);
-            this.txtHinh.Name = "txtHinh";
-            this.txtHinh.Size = new System.Drawing.Size(316, 22);
-            this.txtHinh.TabIndex = 25;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // frmNV
             // 
@@ -444,6 +448,7 @@
             this.Load += new System.EventHandler(this.Q_Load);
             this.frmInfo.ResumeLayout(false);
             this.frmInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHinh)).EndInit();
             this.frmList.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -458,7 +463,6 @@
         private System.Windows.Forms.Label lblbirth;
         private System.Windows.Forms.Label lblNam;
         private System.Windows.Forms.Label lblNV;
-        private System.Windows.Forms.ListView someThing;
         private System.Windows.Forms.MaskedTextBox txtName;
         private System.Windows.Forms.MaskedTextBox txtID;
         private System.Windows.Forms.Label lblphoneNumber;
@@ -488,7 +492,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.CheckBox checkedGirl;
         private System.Windows.Forms.CheckBox checkedBoy;
-        private System.Windows.Forms.TextBox txtHinh;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox txtHinh;
     }
 }
 
