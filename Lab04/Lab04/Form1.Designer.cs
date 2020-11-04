@@ -101,24 +101,24 @@
             // 
             this.pbHinh.Location = new System.Drawing.Point(0, 31);
             this.pbHinh.Name = "pbHinh";
-            this.pbHinh.Size = new System.Drawing.Size(713, 365);
+            this.pbHinh.Size = new System.Drawing.Size(713, 401);
             this.pbHinh.TabIndex = 1;
             this.pbHinh.TabStop = false;
             this.pbHinh.Click += new System.EventHandler(this.frmPicture_Load);
             // 
             // hScrollBar
             // 
-            this.hScrollBar.Location = new System.Drawing.Point(0, 409);
+            this.hScrollBar.Location = new System.Drawing.Point(0, 435);
             this.hScrollBar.Name = "hScrollBar";
-            this.hScrollBar.Size = new System.Drawing.Size(701, 24);
+            this.hScrollBar.Size = new System.Drawing.Size(713, 24);
             this.hScrollBar.TabIndex = 2;
             this.hScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar_Scroll);
             // 
             // vScrollBar
             // 
-            this.vScrollBar.Location = new System.Drawing.Point(716, 31);
+            this.vScrollBar.Location = new System.Drawing.Point(728, 31);
             this.vScrollBar.Name = "vScrollBar";
-            this.vScrollBar.Size = new System.Drawing.Size(38, 439);
+            this.vScrollBar.Size = new System.Drawing.Size(26, 401);
             this.vScrollBar.TabIndex = 3;
             this.vScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar_Scroll);
             // 
@@ -171,18 +171,18 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reloadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pbHinh;
-        private System.Windows.Forms.HScrollBar hScrollBar;
-        private System.Windows.Forms.VScrollBar vScrollBar;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripStatusLabel1;
-        private System.Windows.Forms.OpenFileDialog openFileDlg;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem reloadToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem1;
+        public System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        public System.Windows.Forms.PictureBox pbHinh;
+        public System.Windows.Forms.HScrollBar hScrollBar;
+        public System.Windows.Forms.VScrollBar vScrollBar;
+        public System.Windows.Forms.ToolStrip toolStrip1;
+        public System.Windows.Forms.ToolStripLabel toolStripStatusLabel1;
+        public System.Windows.Forms.OpenFileDialog openFileDlg;
     }
 }
 
