@@ -1,0 +1,26 @@
+﻿[
+  {
+    "MSSV": "1812733",
+    "TenLot": "Nguyễn Minh",
+    "SoCMND": "200568977",
+    "gioiTinh": 0,
+    "NgaySinh": "2000-02-20T22:25:19",
+    "DiaChi": "Nha Trang, Khánh Hòa",
+    "Ten": "Cường",
+    "Lop": "CTK42",
+    "SDT": "0848.987.650",
+    "dsMonHocDangKy": [ "Mạng máy tính", "Hệ điều hành", "Lập trình CSDL", "Lập trình trên thiết bị di động" ]
+  },
+  {
+    "MSSV": "1812828",
+    "TenLot": "Võ Thúy",
+    "SoCMND": "250055689",
+    "gioiTinh": 1,
+    "NgaySinh": "2000-10-20T22:30:26",
+    "DiaChi": "Phú Yên, Việt Nam",
+    "Ten": "Phương",
+    "Lop": "CTK42",
+    "SDT": "0798.677.236",
+    "dsMonHocDangKy": [ "Mạng máy tính", "Hệ điều hành", "Lập trình CSDL", "Lập trình trên thiết bị di động" ]
+  }
+]

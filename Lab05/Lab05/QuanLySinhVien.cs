@@ -1,72 +1,99 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab05
 {
-    public delegate int SoSanh(object sv1, object sv2);
-    class QuanLySinhVien
+    public interface IStudentDataStorage
     {
-        public List<SinhVien> DanhSach;
-        public QuanLySinhVien()
+        string FilePath { get; }
+        List<SinhVien> Load();
+        void Write(List<SinhVien> sinhViens);
+    }
+
+    public class QLSinhVien
+    {
+        private readonly List<SinhVien> dsSinhVien;
+        private readonly IStudentDataStorage dataStorage;
+
+        public QLSinhVien(IStudentDataStorage dataStorage)
         {
-            DanhSach = new List<SinhVien>();
+            this.dataStorage = dataStorage;
+            dsSinhVien = dataStorage.Load();
         }
-        public void Them(SinhVien sv)
+
+
+        public List<SinhVien> GetAll()
         {
-            this.DanhSach.Add(sv);
+            return dsSinhVien;
         }
-        public SinhVien this[int index]
+
+        public SinhVien GetByID(string MSSV)
         {
-            get { return DanhSach[index]; }
-            set { DanhSach[index] = value; }
+            if (string.IsNullOrWhiteSpace(MSSV))
+                throw new ArgumentException($"Tên sinh viên không hợp lệ!");
+
+            SinhVien sv = null;
+
+            sv = dsSinhVien.Find(s => s.MSSV == MSSV);
+
+            return sv;
         }
-        public void Xoa(object obj, SoSanh ss)
+
+        public List<SinhVien> GetByName(string name)
         {
-            int i = DanhSach.Count - 1;
-            for (; i >= 0; i--)
-            {
-                if (ss(obj, this[i]) == 0)
-                {
-                    this.DanhSach.RemoveAt(i);
-                }
-            }
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException($"Tên sinh viên không hợp lệ!");
+
+            return dsSinhVien.FindAll(sv => sv.Ten.ToLower() == name.ToLower());
         }
-        public void Tim(SinhVien sv) => DanhSach.Find(s => s.MaSo == sv.MaSo);
-        public bool Sua(SinhVien svsua, object obj, SoSanh ss)
+
+        public List<SinhVien> GetByClassName(string className)
         {
-            int i, count;
-            bool kq = false;
-            count = this.DanhSach.Count - 1;
-            for (i = 0; i < 0; i++)
-            {
-                if (ss(obj, this[i]) == 0)
-                {
-                    this[i] = svsua;
-                    kq = true;
-                    break;
-                }
-            }
-            return kq;
+            if (string.IsNullOrWhiteSpace(className))
+                throw new ArgumentException($"Lớp không hợp lệ!");
+
+            return dsSinhVien.FindAll(sv => sv.Lop.ToLower() == className.ToLower());
         }
-        public void DocTuFile()
+
+        public void UpdateByID(string MSSV, SinhVien sinhVienMoi)
         {
-            string filename = "DanhSachSV.txt", t;
-            string[] s;
-            SinhVien sv;
-            StreamReader sr = new StreamReader(new FileStream(filename, FileMode.Open));
-            while ((t=sr.ReadLine()) != null)
-            {
-                s = t.Split('*');
-                sv = new SinhVien();
-                sv.MaSo = s[0];
-                sv.HoTen = s[1];
-                sv.NgaySinh = DateTime.Parse(s[2]);
-                sv.DiaChi = s[3];
-            }
+            if (string.IsNullOrWhiteSpace(MSSV))
+                throw new ArgumentException($"Mã số sinh viên không hợp lệ!");
+
+            var isExist = dsSinhVien.Exists(sv => sv.MSSV == MSSV);
+            if (!isExist)
+                throw new ArgumentException($"Sinh viên có mã số {MSSV} không tồn tại!");
+
+            var index = dsSinhVien.FindIndex(sv => sv.MSSV == MSSV);
+            dsSinhVien[index] = sinhVienMoi;
+
+            dataStorage.Write(dsSinhVien);
+        }
+
+        public void DeleteByID(string MSSV)
+        {
+            if (string.IsNullOrWhiteSpace(MSSV))
+                throw new ArgumentException($"Mã số sinh viên không hợp lệ!");
+
+            var sinhVien = dsSinhVien.Find(sv => sv.MSSV == MSSV);
+            if (sinhVien is null)
+                throw new ArgumentException($"Không tồn tại sinh viên có mã số {MSSV}");
+
+            dsSinhVien.Remove(sinhVien);
+            dataStorage.Write(dsSinhVien);
+        }
+
+        public void Add(SinhVien sinhVien)
+        {
+            if (sinhVien is null)
+                throw new ArgumentException($"Sinh viên không hợp lệ!");
+
+            var isExist = dsSinhVien.Exists(sv => sv.MSSV == sinhVien.MSSV);
+            if (isExist)
+                throw new ArgumentException($"Sinh viên có mã số {sinhVien.MSSV} đã tồn tại!");
+
+            dsSinhVien.Add(sinhVien);
+            dataStorage.Write(dsSinhVien);
         }
     }
 }

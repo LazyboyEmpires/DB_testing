@@ -1,0 +1,5 @@
+﻿1812828	Nguyễn Thị	A	NVK42	Nữ	4/20/2000	123456789	0123.456.789	Đà Lạt, Lâm Đồng	Mạng máy tính;Hệ điều hành;Lập trình CSDL
+1812333	Nguyễn Thị	B	DLK44	Nữ	5/1/2002	123423100	0123.123.123	Đà Lạt, Lâm Đồng	Mạng máy tính;Hệ điều hành;Lập trình CSDL;Lập trình trên thiết bị di động
+1812733	Nguyễn Văn	C	NNK42	Nam	30/6/2000	256468798	0341.414.242	Đức Trọng, Lâm Đồng	Mạng máy tính;Hệ điều hành;Lập trình CSDL;Lập trình mạng;Đồ án cơ sở;Phương pháp NCKH;Lập trình trên thiết bị di động;An toàn và bảo mật hệ thống
+1819877	Trần Thị	D	CSK43	Nữ	10/31/2001	123564789	0415.515.525	Bảo Lộc, Lâm Đồng	Mạng máy tính;Hệ điều hành;Lập trình CSDL;Lập trình mạng
+1812537	Nguyễn Thị	E	CTK42	Nữ	3/20/2000	454545778	0151.515.252	Đà Lạt, Lâm Đồng	null
