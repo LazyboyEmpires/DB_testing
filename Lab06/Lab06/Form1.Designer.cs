@@ -63,6 +63,7 @@
             this.chType});
             this.lvCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lvCategory.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCategory.FullRowSelect = true;
             this.lvCategory.HideSelection = false;
             this.lvCategory.Location = new System.Drawing.Point(0, 285);
             this.lvCategory.Name = "lvCategory";
@@ -70,7 +71,7 @@
             this.lvCategory.TabIndex = 1;
             this.lvCategory.UseCompatibleStateImageBehavior = false;
             this.lvCategory.View = System.Windows.Forms.View.Details;
-            this.lvCategory.SelectedIndexChanged += new System.EventHandler(this.lvCategory_SelectedItemsChanged);
+            this.lvCategory.Click += new System.EventHandler(this.lvCategory_Click);
             // 
             // chID
             // 

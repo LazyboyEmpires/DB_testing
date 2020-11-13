@@ -130,6 +130,7 @@ namespace Lab06
 
             //Thực thi lệnh bằng phương thức ExcuteReader
             int numOfRowsEffected = sqlCommand.ExecuteNonQuery();
+            MessageBox.Show(numOfRowsEffected.ToString());
 
             if (numOfRowsEffected != 1)
             {
@@ -148,17 +149,7 @@ namespace Lab06
 
         }
 
-        private void lvCategory_SelectedItemsChanged(object sender, EventArgs e)
-        {
-            ListViewItem item = lvCategory.SelectedItems[0];
 
-            txtID.Text = item.SubItems[0].Text;
-            txtName.Text = item.SubItems[1].Text;
-            txtType.Text = item.SubItems[2].Text == "0" ? "Thức uống" : "Đồ ăn";
-
-            btnCapNhat.Enabled = true;
-            btnXoa.Enabled = true;
-        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -191,6 +182,18 @@ namespace Lab06
             btnXoa.Enabled = false;
 
             sqlConnection.Close();
+        }
+
+        private void lvCategory_Click(object sender, EventArgs e)
+        {
+            ListViewItem item = lvCategory.SelectedItems[0];
+
+            txtID.Text = item.SubItems[0].Text;
+            txtName.Text = item.SubItems[1].Text;
+            txtType.Text = item.SubItems[2].Text == "0" ? "Thức uống" : "Đồ ăn";
+
+            btnCapNhat.Enabled = true;
+            btnXoa.Enabled = true;
         }
     }
 }
