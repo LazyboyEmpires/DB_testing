@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Lớp quản lý Food: DA = DataAccess
+    /// </summary>
     public class FoodDA
     {
         // Phương thức lấy hết dữ liệu theo thủ tục Food_GetAll
@@ -48,7 +53,7 @@ namespace DataAccess
             SqlCommand command = sqlConn.CreateCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = Ultilities.Food_InsertUpdateDelete;
-            // Thêm các tham số cho thủ tục; Các tham số này chính là các tham số
+            // Thêm các tham số cho thủ tục; Các tham số này chính là các tham số trong thủ tục;
             //ID là tham số có giá trị lấy ra khi thêm và truyền vào khi xoá, sửa
             SqlParameter IDPara = new SqlParameter("@ID", SqlDbType.Int);
             IDPara.Direction = ParameterDirection.InputOutput;
@@ -72,6 +77,5 @@ namespace DataAccess
                 return (int)command.Parameters["@ID"].Value;
             return 0;
         }
-
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RestaurantManagementProject
+namespace Lab09
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace RestaurantManagementProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmFood());
+            Application.Run(new MainForm());
         }
     }
 }

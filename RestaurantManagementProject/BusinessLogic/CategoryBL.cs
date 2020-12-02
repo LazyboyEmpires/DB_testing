@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
+    /// <summary>
+    /// Lớp CategoryBL có các phương thức xử lý bảng Category
+    /// </summary>
     public class CategoryBL
     {
         //Đối tượng CategoryDA từ DataAccess
@@ -30,6 +34,5 @@ namespace BusinessLogic
         {
             return categoryDA.Insert_Update_Delete(category, 2);
         }
-
     }
 }

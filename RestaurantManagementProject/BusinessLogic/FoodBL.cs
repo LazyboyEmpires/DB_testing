@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess;
 
 namespace BusinessLogic
 {
+    /// <summary>
+    /// Lớp FoodBL có các phương thức xử lý bảng Food
+    /// </summary>
     public class FoodBL
     {
         //Đối tượng CategoryDA từ DataAccess

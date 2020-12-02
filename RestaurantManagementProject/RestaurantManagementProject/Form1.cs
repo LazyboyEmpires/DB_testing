@@ -30,7 +30,7 @@ namespace RestaurantManagementProject
             //Đổ dữ liệu vào ComboBox
             LoadCategory();
             // Đổ dữ liệu vào ListView
-            LoadFoodDataToListView();
+            //LoadFoodDataToListView();
         }
 
         private void cmdExit_Click(object sender, EventArgs e)
@@ -38,10 +38,7 @@ namespace RestaurantManagementProject
             Application.Exit();
         }
 
-        private void cmdDelete_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void cmdClear_Click(object sender, EventArgs e)
         {
@@ -165,8 +162,7 @@ namespace RestaurantManagementProject
                 LoadFoodDataToListView();
             }
             // Nếu thêm không thành công thì thông báo cho người dùng
-            else MessageBox.Show("Thêm dữ liệu không thành công. Vui lòng kiểm tra lại
-           dữ liệu nhập");
+            else MessageBox.Show("Thêm dữ liệu không thành công. Vui lòng kiểm tra lại dữ liệu nhập");
         }
         private void cmdDelete_Click(object sender, EventArgs e)
         {
@@ -236,8 +232,7 @@ namespace RestaurantManagementProject
                 LoadFoodDataToListView();
             }
             // Nếu thêm không thành công thì thông báo cho người dùng
-            else MessageBox.Show("Cập nhật dữ liệu không thành công. Vui lòng kiểm tra
-           lại dữ liệu nhập");
+            else MessageBox.Show("Cập nhật dữ liệu không thành công. Vui lòng kiểm tra lại dữ liệu nhập");
         }
 
 

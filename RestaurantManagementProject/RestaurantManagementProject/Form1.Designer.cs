@@ -100,7 +100,6 @@ namespace RestaurantManagementProject
             this.cmdDelete.TabIndex = 5;
             this.cmdDelete.Text = "Clear";
             this.cmdDelete.UseVisualStyleBackColor = true;
-            this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
             // 
             // cmdUpdate
             // 

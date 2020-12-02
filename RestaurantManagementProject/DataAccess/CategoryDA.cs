@@ -45,7 +45,7 @@ namespace DataAccess
             // Khai báo đối tượng SqlConnection và mở kết nối
             // Đối tượng SqlConnection truyền vào chuỗi kết nối trong App.config
             SqlConnection sqlConn = new SqlConnection(Ultilities.ConnectionString);
-            sqlConn.Open(); 
+            sqlConn.Open();
             //Khai báo đối tượng SqlCommand có kiểu xử lý là StoredProcedure
             SqlCommand command = sqlConn.CreateCommand();
             command.CommandType = CommandType.StoredProcedure;
@@ -55,7 +55,7 @@ namespace DataAccess
             SqlParameter IDPara = new SqlParameter("@ID", SqlDbType.Int);
             IDPara.Direction = ParameterDirection.InputOutput; // Vừa vào vừa ra
             command.Parameters.Add(IDPara).Value = category.ID;
-            command.Parameters.Add("@Name", SqlDbType.NVarChar, 200);
+            command.Parameters.Add("@Name", SqlDbType.NVarChar, 200)
             .Value = category.Name;
             command.Parameters.Add("@Type", SqlDbType.Int)
             .Value = category.Type;
